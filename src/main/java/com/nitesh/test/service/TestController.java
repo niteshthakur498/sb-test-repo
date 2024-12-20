@@ -1,5 +1,7 @@
 package com.nitesh.test.service;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("/test")
-    public String getResponse(){
-        return "Yes I am working...";
+    public ResponseEntity<String> getResponse(){
+        return ResponseEntity.status(HttpStatus.OK).body("Yes I am working...");
     }
 
 
     @GetMapping("/test1")
-    public String getResponse2(){
-        return "Yes I am also working...";
+    public ResponseEntity<String> getResponse2(){
+        return ResponseEntity.status(HttpStatus.OK).body("Yes I am also working...");
     }
 }

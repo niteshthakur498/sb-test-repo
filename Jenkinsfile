@@ -9,6 +9,12 @@ pipeline {
             }
         }
 
+        stage('Grant Permission') {
+            steps {
+                sh 'chmod +x mvnw'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building the application...'

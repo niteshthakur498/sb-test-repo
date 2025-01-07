@@ -29,6 +29,13 @@ pipeline {
             }
         }
 
+        stage('Test Reports') {
+            steps {
+                echo 'Running Jacoco...'
+                jacoco()
+            }
+        }
+
         stage('Package') {
             steps {
                 echo 'Packaging the application...'
